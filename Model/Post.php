@@ -7,9 +7,3 @@ class Product extends \Model\Model{
         parent::__construct("product");
     }
 }
-
-
-
-
-
-
