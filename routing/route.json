@@ -86,4 +86,9 @@
     "method": "DELETE",
     "controller": "Post",
     "action": "delete"
+    }, {
+        "path": "/Post/([0-9]*)/comments",
+        "method": "GET",
+        "controller": "Post",
+        "action": "getOneWithComments"
 }]

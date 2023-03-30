@@ -7,7 +7,7 @@ class Comment extends \Model\Model {
         parent::__construct("post");
     }
 
-    function getOne($id)
+    function getOneWithComments($id)
     {
         $reqPost = $this->db->prepare("SELECT * FROM " . $this->name . " WHERE id=?");
         $reqPost->execute(array($id));
