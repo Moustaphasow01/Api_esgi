@@ -21,7 +21,7 @@
     "action": "getOne",
     "param": ["id"]
 }, {
-    "path": "/User",
+    "path": "/Post",
     "method": "POST",
     "controller": "User",
     "action": "create"
@@ -70,7 +70,8 @@
     "path": "/Post/([0-9]*)",
     "method": "GET",
     "controller": "Post",
-    "action": "getOne"
+    "action": "getOne",
+    "param": ["id"]
     }, {
     "path": "/Post",
     "method": "POST",
@@ -86,9 +87,5 @@
     "method": "DELETE",
     "controller": "Post",
     "action": "delete"
-    }, {
-        "path": "/Post",
-        "method": "GET",
-        "controller": "Post",
-        "action": "getOne"
-}]
+    }
+]
