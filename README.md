@@ -45,3 +45,8 @@ Supprimer un commentaire (JSON)
 DELETE /comment/id
 
 ----------------------------------
+
+ 
+# Installation et configuration
+
+Pour le bon fonctionnement de ce projet, il est nécessaire d'avoir un outil pour tester les requêtes API (ex: postman) ainsi qu'un serveur web avec mySQL (type wamp, lamp etc).
