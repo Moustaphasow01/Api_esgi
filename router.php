@@ -10,6 +10,13 @@ $method = $_SERVER["REQUEST_METHOD"];
 
 $routeJson = json_decode(file_get_contents("routing/route.json"));
 
+// Afficher la vue d'un post
+$router->get('/post/{id:\d+}', 'Controller\Post@show');
+
+// Afficher la vue d'un commentaire
+$router->get('/comment/{id:\d+}', 'Controller\Comment@show');
+
+
 foreach ($routeJson as $route) {
 
 
