@@ -9,7 +9,7 @@ class Post extends \Model\Model {
 
     function getOne($id)
     {
-        $reqPost = $this->db->prepare("SELECT * FROM " . $this->name . " WHERE id=?");
+        $reqPost = $this->db->prepare("SELECT * FROM  post WHERE id=?");
         $reqPost->execute(array($id));
         $reqPost->setFetchMode(\PDO::FETCH_OBJ);
         $post = $reqPost->fetch();
@@ -22,6 +22,14 @@ class Post extends \Model\Model {
         $post->comments = $comments;
     
         return $post;
+    }
+
+    public function create($id)
+    {
+        $req = $this->db->prepare("SELECT * FROM user WHERE id=?");
+        $req->execute(array($id));
+        $req->setFetchMode(\PDO::FETCH_OBJ);
+        return $req->fetch();
     }
     
 }
