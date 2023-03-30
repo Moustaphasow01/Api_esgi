@@ -1,13 +1,13 @@
 <?php
 namespace Model;
 
-class Comment extends \Model\Model {
+class Post extends \Model\Model {
     public function __construct()
     {
         parent::__construct("post");
     }
 
-    function getOneWithComments($id)
+    function getOne($id)
     {
         $reqPost = $this->db->prepare("SELECT * FROM " . $this->name . " WHERE id=?");
         $reqPost->execute(array($id));
