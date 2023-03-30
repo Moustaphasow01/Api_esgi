@@ -7,10 +7,21 @@ class Comment extends \Model\Model {
         parent::__construct("post");
     }
 
-    public function getAllComments()
+    function getOne($id)
     {
-        $req = $this->db->query("SELECT * FROM post");
-        $req->setFetchMode(\PDO::FETCH_OBJ);
-        return $req->fetchAll();
+        $reqPost = $this->db->prepare("SELECT * FROM " . $this->name . " WHERE id=?");
+        $reqPost->execute(array($id));
+        $reqPost->setFetchMode(\PDO::FETCH_OBJ);
+        $post = $reqPost->fetch();
+    
+        $reqComments = $this->db->prepare("SELECT * FROM comment WHERE post_id=?");
+        $reqComments->execute(array($id));
+        $reqComments->setFetchMode(\PDO::FETCH_OBJ);
+        $comments = $reqComments->fetchAll();
+    
+        $post->comments = $comments;
+    
+        return $post;
     }
+    
 }
