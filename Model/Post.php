@@ -12,5 +12,4 @@ class Product extends \Model\Model{
         $req->setFetchMode(\PDO::FETCH_OBJ);
         return $req->fetchAll();
     }
-    
 }
